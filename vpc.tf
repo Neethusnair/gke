@@ -20,10 +20,6 @@ terraform {
 }
 
 
-variable "project_id" {
-  description = "project id"
-}
-
 variable "region" {
   default     = "us-central1"
   description = "region"
