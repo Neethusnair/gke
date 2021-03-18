@@ -31,7 +31,7 @@ variable "zone" {
 }
 
 variable "name_var" {
-  description = "name"
+  description = "names"
 }
 
 provider "google" {
