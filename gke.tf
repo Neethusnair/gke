@@ -16,7 +16,7 @@ variable "gke_num_nodes" {
 # GKE cluster
 resource "google_container_cluster" "primary" {
   name     = "${var.name_var}-gke"
-  location   = var.zone
+  location = var.zone
   #location = var.region
   #zone     = var.zone
 
@@ -38,8 +38,8 @@ resource "google_container_cluster" "primary" {
 
 # Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes" {
-  name       = "${google_container_cluster.primary.name}-node-pool"
-  location   = var.zone
+  name     = "${google_container_cluster.primary.name}-node-pool"
+  location = var.zone
   #location   = var.region
   #zone       = var.zone
   cluster    = google_container_cluster.primary.name
@@ -52,7 +52,7 @@ resource "google_container_node_pool" "primary_nodes" {
     ]
 
     #labels = {
-      #env = var.project_id
+    #env = var.project_id
     #}
 
     # preemptible  = true
